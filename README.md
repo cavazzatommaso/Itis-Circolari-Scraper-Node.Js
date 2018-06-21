@@ -13,8 +13,11 @@ $('.dm_row').each(function(i,elem){
             var data = $(this);
             var titolo = data.children().first().text();
             var href = data.children().first().children().get(1).attribs['href'];
+            //Delete from the title \n or \t
             titolo = titolo.replace(/(\r\n\t|\n|\r\t|\t)/gm,"");
             json.push({title: titolo,url: "http://www.iis-silva-ricci.gov.it"+href});
             ct++;
         });
 ```
+
+You can use and see this software from [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://itiscircolari.herokuapp.com/)
