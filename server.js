@@ -3,6 +3,7 @@ var fs = require('fs');
 var request = require('request');
 var cheerio = require('cheerio');
 var app     = express();
+var port = process.env.PORT || 8000;
 
 app.get('/', function(req, res){
 
@@ -34,6 +35,7 @@ res.send('Scritto il file json')
     }) ;
 })
 
-app.listen('8081')
-console.log('Porta 8081');
+server.listen(port, function() {
+    console.log("App is running on port " + port);
+});
 exports = module.exports = app;
