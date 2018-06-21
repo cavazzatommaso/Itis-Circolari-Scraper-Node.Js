@@ -20,4 +20,4 @@ $('.dm_row').each(function(i,elem){
         });
 ```
 
-You can use and see this software from [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://itiscircolari.herokuapp.com/)
+You can use and see this software from [![Heroku](https://www.herokucdn.com/deploy/button.png)](https://itiscircolari.herokuapp.com/)
