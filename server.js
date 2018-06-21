@@ -3,7 +3,6 @@ var fs = require('fs');
 var request = require('request');
 var cheerio = require('cheerio');
 var app     = express();
-var port = process.env.PORT || 8000;
 
 app.get('/', function(req, res){
 
@@ -35,7 +34,7 @@ res.send('Scritto il file json')
     }) ;
 })
 
-server.listen(port, function() {
-    console.log("App is running on port " + port);
-});
+app.listen(process.env.PORT || 3000, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  });
 exports = module.exports = app;
