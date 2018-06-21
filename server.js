@@ -25,13 +25,11 @@ request(urlSito, function(error, response, html){
 
 fs.writeFile('output.json', JSON.stringify(json, null, 4), function(err){
 
-    console.log('Scritto il file json');
-    console.log(json);
-    
+    console.log('Scritto il file json');  
 
 })
 
-res.send('Scritto il file json')
+res.send(json)
 
     }) ;
 })
