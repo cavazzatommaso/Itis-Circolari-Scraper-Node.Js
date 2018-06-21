@@ -6,11 +6,11 @@ var app     = express();
 var pagine;
 
 app.get('/', function(req, res){
-    if(req.query.pag > 28 || req.query.pag < 1 ){
+    if(req.query.page > 28 || req.query.page < 1 ){
         json = {error:"404",details:"Page not found (MIN = 1) (MAX = 28)"};
         res.send(json);
     }else{
-        pagine = 15*(req.query.pag-1);
+        pagine = 15*(req.query.page-1);
 
 urlSito = 'http://www.iis-silva-ricci.gov.it/documenti/cat_view/1-circolari.html'+'?start='+pagine;
 
