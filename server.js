@@ -17,6 +17,7 @@ request(urlSito, function(error, response, html){
             var data = $(this);
             var titolo = data.children().first().text();
             var href = data.children().first().children().get(1).attribs['href'];
+            titolo = titolo.replace(/(\r\n\t|\n|\r\t|\t)/gm,"");
             json.push({title: titolo,url: "http://www.iis-silva-ricci.gov.it"+href});
             ct++;
         });
