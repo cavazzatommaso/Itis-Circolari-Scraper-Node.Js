@@ -24,6 +24,24 @@ You can use and see this from [![Heroku](https://www.herokucdn.com/deploy/button
 
 ## Use it
 You are free to use this, all you have to do is an http.get request.
+### For the first page:
+```sh
+https://itiscircolari.herokuapp.com/
+//this will return the content for default page (1)
+```
+### For Other page:
+```sh
+https://itiscircolari.herokuapp.com/?page=3
+//this will return the content for page 3
+//just change the number for other result
+```
+
+### Error:
+```sh
+//The Json if would happen some error is:
+[{error:"404", details:"Page not found (MIN = 1) (MAX = 28)}]
+//For fix this just pay attention to ne number of page
+```
 
 ### :memo: To Do:
 - request for more pages
