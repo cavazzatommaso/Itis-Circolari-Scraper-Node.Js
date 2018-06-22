@@ -3,7 +3,6 @@ var fs = require('fs');
 var request = require('request');
 var cheerio = require('cheerio');
 var app     = express();
-var pagina;
 var json = [];
 
 
@@ -12,20 +11,14 @@ app.get('/', function(req, res){
         json = {error:"404",details:"Page not found (MIN = 1) (MAX = 28)"};
         res.send(json);
     }else{
-        if(req.query.page > 0){
+        /*if(req.query.page > 0){
             pagina(req,res);
         }else {
             console.log("Più pagine");
             pagine(req,res);
-        }
-        
-    }
-})
-
-//Funzione richiesta pagina singola
-function pagina(req,res){
-    pagina = 15*(req.query.page-1);
-    urlSito = 'http://www.iis-silva-ricci.gov.it/documenti/cat_view/1-circolari.html'+'?start='+pagina;
+        }*/
+        pagina = 15*(req.query.page-1);
+        urlSito = 'http://www.iis-silva-ricci.gov.it/documenti/cat_view/1-circolari.html'+'?start='+pagina;
         request(urlSito, function(error, response, html){
             if(!error){
                 var $ = cheerio.load(html);
@@ -43,6 +36,12 @@ function pagina(req,res){
             
     res.send(json)
     }) ;
+    }
+})
+/*
+//Funzione richiesta pagina singola
+function pagina(req,res){
+    
 }
 
 //Funzione più pagine
@@ -65,14 +64,13 @@ function pagine(req,res){
     }) ;
     }
     setTimeout(send, 1500, res);
-    
 }
 
 function send(res){
     res.send(json);
     json = [];
 }
-
+*/
 app.listen(process.env.PORT || 3000, function(){
     console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
   });
