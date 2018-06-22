@@ -35,6 +35,15 @@ https://itiscircolari.herokuapp.com/?page=3
 //this will return the content for page 3
 //just change the number for other result
 ```
+## Sperimental Features:
+## Use at your own risk
+### For More pages:
+```sh
+https://itiscircolari.herokuapp.com/?end=3
+//this will return the content from page 1 to page 3
+//Please do not stress to much the website
+```
+The problem is that the return of this call is not defined. Some times it's work perfectly, other times don't.
 
 ### Error:
 ```sh
@@ -44,4 +53,4 @@ https://itiscircolari.herokuapp.com/?page=3
 ```
 
 ### :memo: To Do:
-- request for more pages
+- Order the result when calling more pages
