@@ -36,6 +36,13 @@ https://itiscircolari.herokuapp.com/?page=3
 //just change the number for other result
 ```
 
+### For More pages:
+```sh
+https://itiscircolari.herokuapp.com/?end=3
+//this will return the content from page 1 to page 3
+//Please do not stress to much the website
+```
+
 ### Error:
 ```sh
 //The Json if would happen some error is:
@@ -44,4 +51,4 @@ https://itiscircolari.herokuapp.com/?page=3
 ```
 
 ### :memo: To Do:
-- request for more pages
+- Order the result when calling more pages
