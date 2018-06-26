@@ -7,6 +7,8 @@ var json = [];
 
 
 app.get('/', function(req, res){
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     if(req.query.page > 28 || req.query.page < 1 ){
         json = {error:"404",details:"Page not found (MIN = 1) (MAX = 28)"};
         res.send(json);
