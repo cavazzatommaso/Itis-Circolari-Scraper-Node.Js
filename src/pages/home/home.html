@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Circolari
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button>Pagina:{{pagina}}</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content>
+  <ion-list inset>
+    <ion-item-sliding *ngFor="let circolare of circolari" text-wrap>
+      <ion-item>
+        <h2>{{circolare.title}}</h2>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button icon-start (click)="openUrl(circolare)">
+          <ion-icon name="eye"></ion-icon>
+          View
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+    <ion-fab right bottom #fab>
+      <button ion-fab color="dager"><ion-icon color="light" name="folder"></ion-icon></button>
+      <ion-fab-list side="left">
+        <button ion-fab (click)="load('5',fab)">5</button>
+        <button ion-fab (click)="load('4',fab)">4</button>
+        <button ion-fab (click)="load('3',fab)">3</button>
+        <button ion-fab (click)="load('2',fab)">2</button>
+        <button ion-fab (click)="load('1',fab)">1</button>
+      </ion-fab-list>
+    </ion-fab>
+</ion-content>
